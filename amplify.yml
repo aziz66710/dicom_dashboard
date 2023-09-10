@@ -1,6 +1,9 @@
 version: 1
 frontend:
   phases:
+    preBuild:
+      commands:
+        - npm install react-scripts
     # IMPORTANT - Please verify your build commands
     build:
       commands: 
