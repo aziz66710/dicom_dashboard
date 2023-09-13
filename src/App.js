@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import {Deploy} from './Component/Deploy/Deploy';
 // use state create state variable = store backend
 // use effect 
 function App() {
@@ -17,18 +18,23 @@ function App() {
     }, [] )
 
     return (
-        <div>
-
-            {(typeof data.members == 'undefined') ? (
-                <p>Loading...</p>
-            ) : (
-                data.members.map((member,i) => (
-                    <p key={i}>{member}</p>
-                ))
-            )}
+        <div className='App'>
+            <Deploy prop={data}></Deploy>
 
         </div>
-    )
+
+        // <div>
+
+        //     {(typeof data.members == 'undefined') ? (
+        //         <p>Loading...</p>
+        //     ) : (
+        //         data.members.map((member,i) => (
+        //             <p key={i}>{member}</p>
+        //         ))
+        //     )}
+
+        // </div>
+    );
 }
 
 export default App
