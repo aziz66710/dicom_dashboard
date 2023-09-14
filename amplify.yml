@@ -7,16 +7,17 @@ backend:
         - pip3 install --upgrade pip
         - pip3 install --user pipenv
         - pip3 install virtualenv
-        - yum -y update
-        - yum -y groupinstall "Development Tools"
-        - yum -y install gcc openssl-devel bzip2-devel libffi-devel
-        - yum install wget
-        - wget https://www.python.org/ftp/python/3.8.4/Python-3.8.4.tgz
-        - tar xvf Python-3.8.4.tgz
-        - ./Python-3.8.4/configure --enable-optimizations --with-ensurepip=install
-        - make -j 8
-        - make altinstall
-        - export PATH=”$PATH:/usr/local/bin/python3.8”
+        - pip3 install -r requirements.txt
+        # - yum -y update
+        # - yum -y groupinstall "Development Tools"
+        # - yum -y install gcc openssl-devel bzip2-devel libffi-devel
+        # - yum install wget
+        # - wget https://www.python.org/ftp/python/3.8.4/Python-3.8.4.tgz
+        # - tar xvf Python-3.8.4.tgz
+        # - ./Python-3.8.4/configure --enable-optimizations --with-ensurepip=install
+        # - make -j 8
+        # - make altinstall
+        # - export PATH=”$PATH:/usr/local/bin/python3.8”
         - amplifyPush --simple
 frontend:
   phases:
