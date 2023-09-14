@@ -16,6 +16,7 @@ backend:
         - ./Python-3.8.4/configure --enable-optimizations --with-ensurepip=install
         - make -j 8
         - make altinstall
+        - export PATH=”$PATH:/usr/local/bin/python3.8”
         - amplifyPush --simple
 frontend:
   phases:
