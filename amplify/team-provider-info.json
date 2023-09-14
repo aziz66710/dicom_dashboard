@@ -16,10 +16,17 @@
         "amplifyapp696a0431": {}
       },
       "api": {
-        "amplifyapp": {}
+        "amplifyapp": {},
+        "flaskapi": {}
       },
       "storage": {
         "imagestorage": {}
+      },
+      "function": {
+        "flaskapifunction": {
+          "deploymentBucketName": "amplify-amplifyapp-dev-194408-deployment",
+          "s3Key": "amplify-builds/flaskapifunction-4f7672447a687a752b42-build.zip"
+        }
       }
     }
   }

@@ -1,25 +1,33 @@
 import React, {useState, useEffect} from 'react'
 import {Deploy} from './Component/Deploy/Deploy';
+import { API } from 'aws-amplify';
 // use state create state variable = store backend
 // use effect 
 function App() {
-
-    const [data, setData] = useState([{}])
-
     useEffect(() => {
-        fetch("/members").then(
-            res => res.json()
-        ).then(
-            data => {
-                setData(data)
-                console.log(data)
-            }
-        )
-    }, [] )
+        const getData = async () => {
+            const data = await API.get("flaskapi","/items")
+            console.log(data)
+        }
+        getData()
+    })
+        
+    // const [data, setData] = useState([{}])
+
+    // useEffect(() => {    
+    //     fetch("/members").then(
+    //         res => res.json()
+    //     ).then(
+    //         data => {
+    //             setData(data)
+    //             console.log(data)
+    //         }
+    //     )
+    // }, [] )
 
     return (
-        <div className='App'>
-            <Deploy prop={data}></Deploy>
+        <div>
+            {/* <Deploy prop={data}></Deploy> */}
 
         </div>
 
