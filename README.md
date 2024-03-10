@@ -5,7 +5,8 @@ If you've ever wanted to visualize a DICOM image quickly, analyze the intensity 
 
 Upload a Pydicom-compliant DICOM image to the web application and instantly review the image, filtering options, intensity histograms, and metadata!
 
-![](dd_demo.mp4)
+https://github.com/aziz66710/dicom_dashboard/assets/65475783/17d81403-10a7-4ae8-8090-bc4d40e97267
+
 
 ## Libraries and Skills Used
 - Streamlit - Python library that makes it easy to develop custom data web applications. 
