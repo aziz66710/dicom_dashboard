@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# DICOM Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introduction
+If you've ever wanted to visualize a DICOM image quickly, analyze the intensity histogram, view the effects on each using filters, and view the DICOM metadata then the DICOM Dashboard is for you! 
 
-## Available Scripts
+Upload a Pydicom-compliant DICOM image to the web application and instantly review the image, filtering options, intensity histograms, and metadata!
 
-In the project directory, you can run:
+![](dd_demo.mp4)
 
-### `npm start`
+## Libraries and Skills Used
+- Streamlit - Python library that makes it easy to develop custom data web applications. 
+- Pydicom - Python library that allows for read and write of DICOM images
+- Matplotlib - Python library that was used to generate the histogram plot
+- Numpy - Python library used to manipulate pixel data for image
+- Pandas - Python library used to generate the DICOM metadata table
+- OpenCV - Python library used to create the filtering that is performed on the images
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Dataset
+The dataset can be found at the following link: [Sample DICOM Images](https://www.rubomedical.com/dicom_files/)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Method
+Below describes the method and usage of the application. 
 
-### `npm test`
+### Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Install [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) so you can clone the repository
+2. Clone the dicom-dashboard repository to any directory of your choosing
+```bash
+git clone https://github.com/aziz66710/dicom_dashboard.git
+```
+3. Use the package manager [anaconda](https://docs.anaconda.com/free/anaconda/install/index.html) to install anaconda.
 
-### `npm run build`
+4. After installing Anaconda, open **Anaconda Prompt** or any terminal of your choosing and run the following command to create and activate the environment. 
+```bash
+conda env create -f environment.yml
+conda activate dicom_dashboard
+```
+5. Now you can launch the application. Run the following command to launch the streamlit application.
+```bash
+streamlit run run_dicom_dashboard.py
+```
+6. The application will open on your browser at http://localhost:8501/
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Usage
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Upload any DICOM-compliant image. 
+- **NOTE:** The assumption is that the DICOM image contains the following DICOM metadata: Patient Name, Patient Age, Patient Sex, Patient Birth Date, Referring Physician Name, Study Date.
+2. Select any of the filtering options provided via the radio buttons and observe the impact it has on the image uploaded
+3. Observe the generated histogram based on the filtering option selected in step 2. The histogram and its slider values adjusts according to the filter. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Future Work and Improvements
+- Add caching to speed up performance of the web app
+- Save figure to disk option
+- Add different filtering options 
+- Add entire DICOM metadata table and allow values to be edited
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
